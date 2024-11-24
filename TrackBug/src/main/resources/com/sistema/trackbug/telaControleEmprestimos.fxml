@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.trackbug.controllers.GerenciamentoController">
+    <children>
+        <VBox fx:id="barraLateral" prefWidth="50" style="-fx-background-color: linear-gradient(to bottom, #005FF8, #116AF9);" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button fx:id="botaoPrincial" onAction="#alternarBarra" prefHeight="50" prefWidth="50" style="-fx-background-color: Transparent; -fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 15px;" text="☰" textFill="WHITE" />
+                <Region prefHeight="20" />
+                <VBox fx:id="conteudoBarra" alignment="CENTER" managed="false" spacing="10" visible="false">
+                    <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaMenuPrincipal" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Black; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Home" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaCadastroFuncionario" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Funcionários" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaCadastroEquipamento" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Equipamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaEmprestimo" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Realizar Emprestimos" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaControleEmprestimos" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Gerenciamento de Emprestimos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Button>
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#sairSistema" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Red; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Sair" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font></Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+      <Text fx:id="titulo" fill="WHITE" layoutX="382.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTROLE DE EMPRESTIMOS" textAlignment="CENTER" wrappingWidth="260.5367431640625">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Label fx:id="mensagem" alignment="CENTER" layoutX="374.0" layoutY="642.0" prefHeight="18.0" prefWidth="276.0" textAlignment="CENTER" textFill="#00ff26" />
+      <ListView fx:id="listaEquipamentosIndisponiveis" layoutX="170.0" layoutY="229.0" prefHeight="88.0" prefWidth="276.0" />
+      <Label fx:id="detalhesEmprestimo" layoutX="170.0" layoutY="410.0" prefHeight="18.0" prefWidth="276.0" textFill="WHITE" />
+    </children>
+</AnchorPane>

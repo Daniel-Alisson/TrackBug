@@ -15,9 +15,7 @@ public class Manutencao {
     private boolean concluida; // Indica se a manutenção foi concluída ou não
 
     private List<Manutencao> listaManutencao = new ArrayList<>();
-
     DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
     Scanner inserir = new Scanner(System.in);
     private static List<Manutencao> historicoManutencao = new ArrayList<>();
 

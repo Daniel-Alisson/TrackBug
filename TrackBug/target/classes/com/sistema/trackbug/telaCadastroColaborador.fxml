@@ -7,6 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.PasswordField?>
 <AnchorPane maxHeight="769.0" maxWidth="1024.0" minHeight="769.0" minWidth="1024.0" prefHeight="769.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.trackbug.controllers.ColaboradorController">
    <children>
       <AnchorPane layoutX="226.0" prefHeight="770.0" prefWidth="798.0" style="-fx-background-color: black;">
@@ -17,8 +18,14 @@
                </font>
             </Label>
             <TextField fx:id="campoNome" layoutX="62.0" layoutY="280.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite o seu nome" />
-            <Text fill="WHITE" layoutX="62.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="32.619140625" />
-            <Text fill="WHITE" layoutX="62.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cpf" />
+            <Text fill="WHITE" layoutX="62.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="95.044921875">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Text fill="WHITE" layoutX="62.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cpf" wrappingWidth="60.48028564453125">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
             <TextField fx:id="campoCpf" layoutX="62.0" layoutY="344.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite o seu cpf" />
             <Button fx:id="botaoCadastro" layoutX="324.0" layoutY="498.0" mnemonicParsing="false" onAction="#cadastrarColaborador" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: GREEN; -fx-border-radius: 15px; -fx-border-width: 2px; -fx-shape: &quot;M 0,0 L 0,100 L 100,100 L 100,0 Z&quot;;" text="Cadastrar" textFill="WHITE">
                <font>
@@ -26,11 +33,20 @@
                </font></Button>
             <Label fx:id="alerta" alignment="CENTER" contentDisplay="CENTER" layoutX="255.0" layoutY="567.0" prefHeight="18.0" prefWidth="287.0" textFill="#00ff3c" />
             <TextField fx:id="campoEmail" layoutX="444.0" layoutY="280.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite o seu email" />
-            <Text fill="WHITE" layoutX="444.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <Text fill="WHITE" layoutX="444.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
-            <TextField fx:id="campoSenha" layoutX="444.0" layoutY="344.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite a sua senha" />
-            <Text fill="WHITE" layoutX="444.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha novamente" />
-            <TextField fx:id="campoSenha2" layoutX="444.0" layoutY="401.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite a sua senha novamente" />
+            <Text fill="WHITE" layoutX="444.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" wrappingWidth="119.5242919921875">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Text fill="WHITE" layoutX="444.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <PasswordField fx:id="campoSenha" layoutX="444.0" layoutY="344.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite a sua senha" />
+            <Text fill="WHITE" layoutX="444.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha novamente" wrappingWidth="170.8857421875">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <PasswordField fx:id="campoSenha2" layoutX="444.0" layoutY="401.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite a sua senha novamente" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="769.0" prefWidth="226.0" style="-fx-background-color: linear-gradient(to bottom, #005FF8, #116AF9); -fx-border-color: white; -fx-border-width: 2px;" AnchorPane.topAnchor="0.0">

@@ -7,18 +7,19 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Funcionario {
-    Scanner inserir = new Scanner(System.in);
-    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
+    // ATRIBIUTOS
     private int codigo;
     private String nome;
     private String funcao;
     private LocalDate dataAdmissao;
-
     private static int contador = 1;
+
+    Scanner inserir = new Scanner(System.in);
+    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    // LISTA DE FUNCIONARIOS ATIVOS
     private static List<Funcionario> listaFuncionarios = new ArrayList<>();
 
-
+    // CONSTRUTOR
     public Funcionario(String nome, String funcao, LocalDate dataAdmissao) {
         this.codigo = contador++;
         this.dataAdmissao = dataAdmissao;
@@ -66,47 +67,12 @@ public class Funcionario {
         this.nome = nome;
     }
 
+    // METODO PARA CADASTRAR FUNCIONARIOS
     public void cadastrarFuncionario(Funcionario funcionario) {
         listaFuncionarios.add(funcionario);
         System.out.println("Colaborador cadastrado com sucesso!\n");
-
-        /*System.out.println("\n\t\tCADASTRAR FUNCIONÁRIOS");
-        System.out.print("Nome: ");
-        String nome = inserir.nextLine();
-
-        // Validação
-        int codigo;
-        boolean codigoValido = false;
-        do {
-            codigoValido = true;
-            System.out.print("Código: ");
-            codigo = inserir.nextInt();
-            inserir.nextLine();
-
-            // Verifica se o código já está cadastrado na lista
-            for(Funcionario teste : listaFuncionarios) {
-                if (teste.getCodigo() == codigo) {
-                    System.out.println("Este código já foi cadastrado no sistema, insira um código válido!");
-                    codigoValido = false;
-                    break;
-                }
-            }
-        } while(!codigoValido);
-
-        System.out.print("Função: ");
-        String funcao = inserir.nextLine();
-
-        System.out.print("Data de Admissão (ANO-MES-DIA): ");
-        LocalDate dataAdmissao = LocalDate.parse(inserir.nextLine());
-        // Cria um novo objeto Funcionario e o adiciona à lista de funcionários
-        Funcionario funcionario = new Funcionario(codigo, dataAdmissao, funcao, nome);
-        listaFuncionarios.add(funcionario);
-        System.out.println("O funcionário '" + nome + "' foi cadastrado com sucesso!\n");
-
-         */
     }
 
-    // Método para remover um funcionário da lista
     public void removerFuncionario(java.util.List<Funcionario> listaFuncionarios) {
         if(listaFuncionarios.isEmpty()) {
             System.out.println("Nenhum funcionário cadastrado!\n");
@@ -132,7 +98,6 @@ public class Funcionario {
         }
     }
 
-    // Método para listar todos os funcionários cadastrados na lista
     public void listarFuncionarios(java.util.List<Funcionario> listaFuncionarios) {
         System.out.println("\n\t\tLISTAGEM DE FUNCIONÁRIOS");
         if(listaFuncionarios.isEmpty()) {

@@ -2,34 +2,26 @@ package com.sistema.trackbug.controllers;
 
 import com.sistema.trackbug.servicos.Equipamento;
 import com.sistema.trackbug.usuario.Funcionario;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-
-public class MenuControlller extends TrocarTelasController {
+public class MenuControlller extends ConfigController {
+    // BOTOES DA BARRA LATERAL
     @FXML
-    private VBox barraLateral;
+    private Button botaoPrincipal, botaoHome, botaoCadastroFuncionario, botaoCadastroEquipamento, botaoEmprestimos, botaoControleEmprestimos, botaoSair;
 
+    // VARIAVEIS DA BARRA LATERAL
     @FXML
-    private VBox conteudoBarra;
+    private VBox barraLateral, conteudoBarra;
+    private boolean barraExpandida = false;
 
-    @FXML
-    private Button botaoPrincipal;
-
+    // CAMPOS DA TELA
     @FXML
     private TableView<Funcionario> tabelaFuncionarios;
     @FXML
@@ -43,21 +35,25 @@ public class MenuControlller extends TrocarTelasController {
     @FXML
     private TableColumn<Equipamento, String> colunaDescricao;
 
-    private boolean barraExpandida = false;
-
     public void initialize() {
+        configBotoes(botaoHome);
+        configBotoes(botaoCadastroFuncionario);
+        configBotoes(botaoCadastroEquipamento);
+        configBotoes(botaoEmprestimos);
+        configBotoes(botaoControleEmprestimos);
+        configBotoes(botaoSair);
         colunaCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
         colunaCodigo2.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
         atualizarTabela();
-
         colunaCodigo.setStyle("-fx-alignment: CENTER;");
         colunaNome.setStyle("-fx-alignment: CENTER;");
         colunaCodigo2.setStyle("-fx-alignment: CENTER;");
         colunaDescricao.setStyle("-fx-alignment: CENTER;");
     }
 
+    // METODOS PARA CONFIGURAR A BARRA LATERAL
     @FXML
     public void alternarBarra() {
         if (barraExpandida) {
@@ -74,6 +70,7 @@ public class MenuControlller extends TrocarTelasController {
         barraExpandida = !barraExpandida;
     }
 
+    // METODO PARA ATUALIZAR A TABELA, PEGANDO AS LISTAS ATUALIZADAS E JOGANDO AS INFORMACOES NA TABELA
     private void atualizarTabela() {
         ObservableList<Funcionario> funcionarios = FXCollections.observableArrayList(Funcionario.getListaFuncionarios());
         tabelaFuncionarios.setItems(funcionarios);

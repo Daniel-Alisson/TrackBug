@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Equipamento {
+    // ATRIBUTOS
     private int codigo;
     private String descricao;
     private LocalDate dataCompra;
@@ -16,10 +17,12 @@ public class Equipamento {
     private List<Manutencao> historicoManutencao;
     private String estadoConservacao;
 
+    // LISTA DE EQUIPAMENTOS DISPONIVEIS
     private static List<Equipamento> listaEquipamentos = new ArrayList<>();
     Scanner inserir = new Scanner(System.in);
     DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
+    // CONSTRUTOR
     public Equipamento(int codigo, double comprimento, LocalDate dataCompra, String descricao, String estadoConservacao, List<Manutencao> historicoManutencao, double largura, double peso) {
         this.codigo = codigo;
         this.comprimento = comprimento;
@@ -103,60 +106,14 @@ public class Equipamento {
         this.peso = peso;
     }
 
+    // METODO PARA CADASTRAR NOVOS EQUIPAMENTOS, DA MESMA FORMA QUE OS FUNCIONARIOS, SÓ ADICIONA NA LISTA
+    // PROVAVELMENTE VOU TER Q CRIAR VERIFICADORES AQ E NA CLASSE FUNCIONARIO
     public void cadastrarEquipamento(Equipamento equipamento) {
         listaEquipamentos.add(equipamento);
         System.out.println("Equipamento cadastrado com sucesso!");
-
-        /*System.out.println("\n\t\tCADASTRAR EQUIPAMENTO");
-
-        int codigo;
-        boolean codigoValido = false;
-        do {
-            codigoValido = true;
-            System.out.print("Código: ");
-            codigo = inserir.nextInt();
-            inserir.nextLine();
-
-            for(int i = 0; i < listaEquipamentos.size(); i++) {
-                Equipamento teste = listaEquipamentos.get(i);
-                if(teste.getCodigo() == codigo) {
-                    System.out.println("Este código já foi cadastrado no sistema, insira um código válido!");
-                    codigoValido = false;
-                    break;
-                }
-            }
-        } while(!codigoValido);
-
-        System.out.print("Descrição: ");
-        String descricao = inserir.nextLine();
-
-        System.out.print("Data de Compra (ANO-MES-DIA): ");
-        LocalDate dataCompra = LocalDate.parse(inserir.nextLine());
-
-        System.out.print("Peso (kg): ");
-        double peso = inserir.nextDouble();
-
-        System.out.print("Largura (m): ");
-        double largura = inserir.nextDouble();
-
-        System.out.print("Comprimento (m): ");
-        double comprimento = inserir.nextDouble();
-        inserir.nextLine();
-
-        System.out.print("Estado de Conservação: ");
-        String estadoConservacao = inserir.nextLine();
-
-        // Criação da lista de manutenção
-        List<Manutencao> historicoManutencao = new ArrayList<>();
-
-        // Cria o novo equipamento e o adiciona à lista
-        Equipamento novoEquipamento = new Equipamento(codigo, comprimento, dataCompra, descricao, estadoConservacao, historicoManutencao, largura, peso);
-        listaEquipamentos.add(novoEquipamento);
-
-        System.out.println("Equipamento cadastrado com sucesso!\n");
-        */
     }
 
+    // REVISAR
     public void removerEquipamento(List<Equipamento> listaEquipamentos, List<Equipamento> listaEquipamentosIndisponiveis) {
         if(listaEquipamentos.isEmpty() && listaEquipamentosIndisponiveis.isEmpty()) {
             System.out.println("Nenhum equipamento cadastrado!\n");

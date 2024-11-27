@@ -2,18 +2,20 @@ package com.sistema.trackbug.colaborador;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class Colaborador {
-
+public class Colaborador implements Servicos {
+    // ATRIBUTOS
     private String nome;
     private String cpf;
     private String email;
     private String senha;
 
+    // LISTA DE COLABORADORES
     private static List<Colaborador> listaColaboradores = new ArrayList<>();
+    // TENTATIVA DE IMPLEMENTAR INFORMACOES DO COLABORADOR LOGADO
     private static Colaborador colaboradorLogado = null;
 
+    // CONSTRUTOR
     public Colaborador(String nome, String cpf, String email, String senha) {
         this.cpf = cpf;
         this.email = email;
@@ -61,11 +63,14 @@ public class Colaborador {
         this.senha = senha;
     }
 
+    // METODO PARA CADASTRAR COLABORADORES, ELE APENAS ADICIONA NA LISTA DE ADMINS
+
     public void cadastrarColaborador(Colaborador colaborador) {
         listaColaboradores.add(colaborador);
         System.out.println("Colaborador cadastrado com sucesso!\n");
     }
 
+    // METODO PARA LOGAR UM ADMIN, ELE TEM UM VERIFICADOR DE EMAIL E SENHA
     public static boolean loginColaborador(String email, String senha) {
         for(Colaborador teste : listaColaboradores) {
             if(teste.getEmail().equals(email) && teste.getSenha().equals(senha)) {
@@ -78,7 +83,9 @@ public class Colaborador {
         return false;
     }
 
-    public void deslogarColaborador () {
+    // UM METODO PARA DESLOGAR, POSTERIORMENTE DEVO COLOCAR UM BOTÃO PARA DESLOGAR O ADMIN NO MENU PRINCIPAL
+    // REVISAR
+    public void deslogarColaborador() {
         System.out.println("Login desconectado!\n");
     }
 }

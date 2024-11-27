@@ -7,7 +7,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.trackbug.controllers.ColaboradorController">
     <children>
-        <AnchorPane layoutX="226.0" maxHeight="768.0" maxWidth="1024.0" minHeight="768.0" minWidth="798.0" prefHeight="768.0" prefWidth="798.0" style="-fx-background-color: black;">
+        <AnchorPane layoutX="226.0" maxHeight="769.0" maxWidth="1024.0" minHeight="769.0" minWidth="1024.0" prefHeight="769.0" prefWidth="1024.0" style="-fx-background-color: black;">
             <children>
                 <Label fx:id="titulo" alignment="CENTER" layoutX="99.0" layoutY="189.0" prefHeight="70.0" prefWidth="619.0" style="-fx-font-weight: bold;" text="Bem vindos ao Track Bug" textFill="WHITE">
                     <font>

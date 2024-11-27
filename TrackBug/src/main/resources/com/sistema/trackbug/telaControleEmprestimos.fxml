@@ -13,31 +13,31 @@
     <children>
         <VBox fx:id="barraLateral" prefWidth="50" style="-fx-background-color: linear-gradient(to bottom, #005FF8, #116AF9);" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Button fx:id="botaoPrincial" onAction="#alternarBarra" prefHeight="50" prefWidth="50" style="-fx-background-color: Transparent; -fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 15px;" text="☰" textFill="WHITE" />
+                <Button fx:id="botaoPrincipal" onAction="#alternarBarra" prefHeight="50" prefWidth="50" style="-fx-background-color: Transparent; -fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 15px;" text="☰" textFill="WHITE" />
                 <Region prefHeight="20" />
                 <VBox fx:id="conteudoBarra" alignment="CENTER" managed="false" spacing="10" visible="false">
                     <children>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaMenuPrincipal" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Black; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Home" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoHome" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaMenuPrincipal" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Black; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Home" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaCadastroFuncionario" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Funcionários" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoCadastroFuncionario" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaCadastroFuncionario" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Funcionários" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaCadastroEquipamento" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Equipamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoCadastroEquipamento" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaCadastroEquipamento" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Equipamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaEmprestimo" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Realizar Emprestimos" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoEmprestimos" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaEmprestimo" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Realizar Emprestimos" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaControleEmprestimos" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Gerenciamento de Emprestimos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoControleEmprestimos" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaControleEmprestimos" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Gerenciamento de Emprestimos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#sairSistema" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Red; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Sair" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoSair" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#sairSistema" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Red; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Sair" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
@@ -52,6 +52,7 @@
       </Text>
       <Label fx:id="mensagem" alignment="CENTER" layoutX="374.0" layoutY="642.0" prefHeight="18.0" prefWidth="276.0" textAlignment="CENTER" textFill="#00ff26" />
       <ListView fx:id="listaEquipamentosIndisponiveis" layoutX="170.0" layoutY="229.0" prefHeight="88.0" prefWidth="276.0" />
-      <Label fx:id="detalhesEmprestimo" layoutX="170.0" layoutY="410.0" prefHeight="18.0" prefWidth="276.0" textFill="WHITE" />
+      <Label fx:id="detalhesEmprestimo" layoutX="170.0" layoutY="393.0" prefHeight="18.0" prefWidth="276.0" textFill="WHITE" />
+      <Label layoutX="170.0" layoutY="212.0" text="Lista de Equipamentos Indisponiveis" textFill="WHITE" />
     </children>
 </AnchorPane>

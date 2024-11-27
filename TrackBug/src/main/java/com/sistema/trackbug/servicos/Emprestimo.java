@@ -3,12 +3,11 @@ package com.sistema.trackbug.servicos;
 import com.sistema.trackbug.usuario.Funcionario;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Emprestimo {
+    // ATRIBUTOS
     private LocalDateTime dataHoraSaida;
     private LocalDateTime dataHoraRetorno;
     private Funcionario funcionario;
@@ -16,9 +15,12 @@ public class Emprestimo {
     private String observacoes;
     private boolean ativo;
 
+    // LISTA DE EMPRESTIMOS ATIVOS
     private static List<Emprestimo> listaEmprestimos = new ArrayList<>();
+    // HISTORICO DE EMPRESTIMO, TENTAR ADICIONAR UM METODO DE VERIFICAR O HISTORICO DE EMPRESTIMOS
     private static List<Emprestimo> historicoEmprestimos = new ArrayList<>();
 
+    // CONSTRUTOR
     public Emprestimo(LocalDateTime dataHoraSaida, LocalDateTime dataHoraRetorno, Equipamento equipamento, Funcionario funcionario, String observacoes) {
         this.dataHoraSaida = dataHoraSaida;
         this.dataHoraRetorno = dataHoraRetorno;
@@ -84,8 +86,7 @@ public class Emprestimo {
         this.ativo = ativo;
     }
 
-
-
+    // METODOS PARA REVISAR
     public void listarEmprestimosAtivos() {
         if (listaEmprestimos.isEmpty()) {
             System.out.println("Nenhum empréstimo foi cadastrado");

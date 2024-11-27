@@ -1,41 +1,42 @@
 package com.sistema.trackbug.controllers;
 
 import com.sistema.trackbug.usuario.Funcionario;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 import java.time.LocalDate;
 
-public class FuncionarioController extends TrocarTelasController {
+public class FuncionarioController extends ConfigController {
+    // BOTOES DA BARRA LATERAL
+    @FXML
+    private Button botaoPrincipal, botaoHome, botaoCadastroFuncionario, botaoCadastroEquipamento, botaoEmprestimos, botaoControleEmprestimos, botaoSair;
+
+    // VARIAVEIS DA BARRA LATERAL
     @FXML
     private VBox barraLateral;
-
     @FXML
     private VBox conteudoBarra;
+    private boolean barraExpandida = false;
 
-    @FXML
-    private Button botaoPrincipal;
-
+    // CAMPOS DA TELA
     @FXML
     private TextField campoNome, campoFuncao;
-
     @FXML
     DatePicker campoData;
-
     @FXML
     Label alerta;
 
-    private boolean barraExpandida = false;
+    public void initialize() {
+        configBotoes(botaoHome);
+        configBotoes(botaoCadastroFuncionario);
+        configBotoes(botaoCadastroEquipamento);
+        configBotoes(botaoEmprestimos);
+        configBotoes(botaoControleEmprestimos);
+        configBotoes(botaoSair);
+    }
 
+    // METODOS PARA CONFIGURAR A BARRA LATERAL
     @FXML
     public void alternarBarra() {
         if (barraExpandida) {
@@ -52,6 +53,7 @@ public class FuncionarioController extends TrocarTelasController {
         barraExpandida = !barraExpandida;
     }
 
+    // METODO PARA CADASTRAR FUNCIONARIOS
     @FXML
     private void cadastrarFuncionario(ActionEvent event) {
         String nome = campoNome.getText();
@@ -69,6 +71,7 @@ public class FuncionarioController extends TrocarTelasController {
         Funcionario.listarFuncionarios();
     }
 
+    // METODO PARA LIMPAR CAMPOS
     private void limparCampos() {
         campoNome.clear();
         campoFuncao.clear();

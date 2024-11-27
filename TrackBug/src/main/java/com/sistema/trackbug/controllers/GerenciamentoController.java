@@ -1,35 +1,26 @@
 package com.sistema.trackbug.controllers;
 
 import com.sistema.trackbug.servicos.Emprestimo;
-import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-
-public class GerenciamentoController extends TrocarTelasController {
+public class GerenciamentoController extends ConfigController {
+    // BOTOES DA BARRA LATERAL
     @FXML
-    private VBox barraLateral;
+    private Button botaoPrincipal, botaoHome, botaoCadastroFuncionario, botaoCadastroEquipamento, botaoEmprestimos, botaoControleEmprestimos, botaoSair;
 
+    // VARIAVEIS DA BARRA LATERAL
     @FXML
-    private VBox conteudoBarra;
-
-    @FXML
-    private Button botaoPrincial;
-
+    private VBox barraLateral, conteudoBarra;
     private boolean barraExpandida = false;
 
+    // CAMPOS DA TELA
     @FXML
     private ListView<String> listaEquipamentosIndisponiveis;
     @FXML
@@ -37,10 +28,17 @@ public class GerenciamentoController extends TrocarTelasController {
     @FXML
     private Label mensagem;
 
+    // LISTA DE EMPRESTIOMS ATIVOS
     private ObservableList<Emprestimo> emprestimosAtivos = FXCollections.observableArrayList();
 
     @FXML
-    private void initialize() {
+    public void initialize() {
+        configBotoes(botaoHome);
+        configBotoes(botaoCadastroFuncionario);
+        configBotoes(botaoCadastroEquipamento);
+        configBotoes(botaoEmprestimos);
+        configBotoes(botaoControleEmprestimos);
+        configBotoes(botaoSair);
         emprestimosAtivos.addAll(Emprestimo.getListaEmprestimos());
         listaEquipamentosIndisponiveis.setItems(
                 FXCollections.observableArrayList(
@@ -57,6 +55,7 @@ public class GerenciamentoController extends TrocarTelasController {
         });
     }
 
+    // METODO PARA MOSTRAR DETALHES DO EQUIPAMENTO EMPRESTADO
     private void mostrarDetalhesEmprestimo(String descricaoEquipamento) {
         Emprestimo emprestimo = emprestimosAtivos.stream()
                 .filter(e -> e.getEquipamento().getDescricao().equals(descricaoEquipamento))
@@ -73,16 +72,17 @@ public class GerenciamentoController extends TrocarTelasController {
         }
     }
 
+    // METODOS PARA CONFIGURAR A BARRA LATERAL
     @FXML
     public void alternarBarra() {
         if (barraExpandida) {
             barraLateral.setPrefWidth(50);
-            botaoPrincial.setText("☰");
+            botaoPrincipal.setText("☰");
             conteudoBarra.setVisible(false);
             conteudoBarra.setManaged(false);
         } else {
             barraLateral.setPrefWidth(200);
-            botaoPrincial.setText("☰");
+            botaoPrincipal.setText("☰");
             conteudoBarra.setVisible(true);
             conteudoBarra.setManaged(true);
         }

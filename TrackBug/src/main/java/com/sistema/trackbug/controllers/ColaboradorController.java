@@ -2,50 +2,37 @@ package com.sistema.trackbug.controllers;
 
 import com.sistema.trackbug.App;
 import com.sistema.trackbug.colaborador.Colaborador;
-import javafx.animation.TranslateTransition;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 import java.io.IOException;
 
-public class ColaboradorController extends TrocarTelasController {
+public class ColaboradorController extends ConfigController {
+    // BOTOES
     @FXML
     private Button botaoCadastro, botaoLogin, botaoSair;
 
+    // CAMPOS DA TELA
     @FXML
-    TextField campoNome;
-
+    TextField campoNome, campoCpf, campoEmail;
     @FXML
-    TextField campoCpf;
-
-    @FXML
-    TextField campoEmail;
-
-    @FXML
-    TextField campoSenha;
-
-    @FXML
-    TextField campoSenha2;
-
+    PasswordField campoSenha, campoSenha2;
     @FXML
     Label alerta;
 
+    // BARRA DE CARREGAMENTO
     @FXML
     ProgressBar barra;
 
     @FXML
     public void initialize() {
+        // TESTES
         Colaborador admin = new Colaborador("admin", "0", "admin", "1");
         admin.cadastrarColaborador(admin);
         configBotoes(botaoLogin);
@@ -53,32 +40,7 @@ public class ColaboradorController extends TrocarTelasController {
         configBotoes(botaoSair);
     }
 
-    private void configBotoes(Button botao) {
-        botao.setOnMouseEntered(event -> expandirBarra(botao));
-        botao.setOnMouseExited(event -> recolherBarra(botao));
-
-    }
-
-    private void expandirBarra(Button botao) {
-        TranslateTransition transition = new TranslateTransition();
-        transition.setNode(botao);
-        transition.setToY(-5);
-        transition.setDuration(Duration.millis(150));
-        transition.setCycleCount(1);
-        transition.setAutoReverse(false);
-        transition.play();
-    }
-
-    private void recolherBarra(Button botao) {
-        TranslateTransition transition = new TranslateTransition();
-        transition.setNode(botao);
-        transition.setToY(0);
-        transition.setDuration(Duration.millis(150));
-        transition.setCycleCount(1);
-        transition.setAutoReverse(false);
-        transition.play();
-    }
-
+    // METODO PARA CADASTRAR COLABORADORES
     @FXML
     private void cadastrarColaborador(ActionEvent event) {
         String nome = campoNome.getText();
@@ -98,21 +60,22 @@ public class ColaboradorController extends TrocarTelasController {
         }
     }
 
+    // METODO PARA REALIZAR LOGIN DE COLABORADORES
     @FXML
     private void loginColaborador(ActionEvent event) {
         String email = campoEmail.getText();
         String senha = campoSenha.getText();
 
         if(Colaborador.loginColaborador(email, senha)) {
-            telaMenu(event);
+            carregarBarra(event);
         } else {
             alerta.setText("Email ou senha inválido!");
         }
     }
 
-
+    // ANIMAÇÃO DA BARRA DE CARREGAMENTO
     @FXML
-    private void telaMenu(ActionEvent event) {
+    private void carregarBarra(ActionEvent event) {
         new Thread(() -> {
             for (int i = 1; i <= 100; i++) {
                 final int progress = i;
@@ -127,6 +90,7 @@ public class ColaboradorController extends TrocarTelasController {
         }).start();
     }
 
+    // MUDAR TELA PARA O MENU PRINCIPAL APOS CARREGAR A BARRA
     private void abrirMenu(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(App.class.getResource("/com/sistema/trackbug/telaMenuPrincipal.fxml"));
@@ -140,6 +104,7 @@ public class ColaboradorController extends TrocarTelasController {
         }
     }
 
+    // METODO PARA LIMPAR CAMPOS
     @FXML
     private void limparCampos() {
         if(campoNome != null) {
@@ -154,9 +119,5 @@ public class ColaboradorController extends TrocarTelasController {
         if(campoEmail != null) {
             campoEmail.clear();
         }
-    }
-    @FXML
-    private void sairSistema() {
-        Platform.exit();
     }
 }

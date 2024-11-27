@@ -23,8 +23,7 @@ public class App extends Application {
         // 3- TENTAR ADICIONAR UM ICONE JUNTO COM O TITULO "TRACK BUG
         // 4- ADICIONAR UMA FOTO DA UNIFAN
         // 5- RESOLVER O PROBLEMA DE HIERARQUIA DA BARRA LATERAL
-        // 6- LIMPAR O CÓDIGO
-        // 7- SE DER TEMPO, TENTAR ESTILIZAR MELHOR
+        // 6- SE DER TEMPO, TENTAR ESTILIZAR MELHOR
         stage.show();
     }
 

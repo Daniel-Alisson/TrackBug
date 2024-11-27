@@ -3,8 +3,6 @@ package com.sistema.trackbug.servicos;
 import com.sistema.trackbug.colaborador.Colaborador;
 import com.sistema.trackbug.usuario.Funcionario;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 

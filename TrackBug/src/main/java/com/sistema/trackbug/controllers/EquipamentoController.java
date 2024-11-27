@@ -2,13 +2,7 @@ package com.sistema.trackbug.controllers;
 
 import com.sistema.trackbug.servicos.Equipamento;
 import com.sistema.trackbug.servicos.Manutencao;
-import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -19,27 +13,34 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EquipamentoController extends TrocarTelasController {
+public class EquipamentoController extends ConfigController {
+    // BOTOES DA BARRA LATERAL
     @FXML
-    TextField campoCodigo, campoDescricao, campoPeso, campoLargura, campoEstadoConservacao, campoComprimento;
+    private Button botaoPrincipal, botaoHome, botaoCadastroFuncionario, botaoCadastroEquipamento, botaoEmprestimos, botaoControleEmprestimos, botaoSair;
 
+    // VARIAVEIS DA BARRA LATERAL
     @FXML
-    DatePicker campoData;
-
-    @FXML
-    Label alerta;
-
-    @FXML
-    private VBox barraLateral;
-
-    @FXML
-    private VBox conteudoBarra;
-
-    @FXML
-    private Button botaoPrincial;
-
+    private VBox barraLateral, conteudoBarra;
     private boolean barraExpandida = false;
 
+    // CAMPOS DA TELA
+    @FXML
+    private TextField campoCodigo, campoDescricao, campoPeso, campoLargura, campoEstadoConservacao, campoComprimento;
+    @FXML
+    private DatePicker campoData;
+    @FXML
+    private Label alerta;
+
+    public void initialize() {
+        configBotoes(botaoHome);
+        configBotoes(botaoCadastroFuncionario);
+        configBotoes(botaoCadastroEquipamento);
+        configBotoes(botaoEmprestimos);
+        configBotoes(botaoControleEmprestimos);
+        configBotoes(botaoSair);
+    }
+
+    // METODO PARA CADASTRAR EQUIPAMENTOS
     @FXML
     private void cadastrarEquipamento() {
         try {
@@ -63,6 +64,7 @@ public class EquipamentoController extends TrocarTelasController {
         }
     }
 
+    // METODO PARA LIMPAR CAMPOS
     @FXML
     private void limparCampos() {
         campoCodigo.clear();
@@ -74,16 +76,17 @@ public class EquipamentoController extends TrocarTelasController {
         campoEstadoConservacao.clear();
     }
 
+    // METODOS PARA CONFIGURAR A BARRA LATERAL
     @FXML
     public void alternarBarra() {
         if (barraExpandida) {
             barraLateral.setPrefWidth(50);
-            botaoPrincial.setText("☰");
+            botaoPrincipal.setText("☰");
             conteudoBarra.setVisible(false);
             conteudoBarra.setManaged(false);
         } else {
             barraLateral.setPrefWidth(200);
-            botaoPrincial.setText("☰");
+            botaoPrincipal.setText("☰");
             conteudoBarra.setVisible(true);
             conteudoBarra.setManaged(true);
         }

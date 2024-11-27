@@ -2,6 +2,7 @@ module com.sistema.trackbug {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
+    requires javafx.base;
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
@@ -11,8 +12,10 @@ module com.sistema.trackbug {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
 
+    opens com.sistema.trackbug.usuario to javafx.base;
     opens com.sistema.trackbug to javafx.fxml;
     exports com.sistema.trackbug;
     exports com.sistema.trackbug.controllers;
+    opens com.sistema.trackbug.servicos to javafx.base;
     opens com.sistema.trackbug.controllers to javafx.fxml;
 }

@@ -8,7 +8,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+
+import java.text.DateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class FuncionarioController extends ConfigController {
@@ -34,6 +37,8 @@ public class FuncionarioController extends ConfigController {
     Label alerta;
     @FXML
     Button botaoCadastro;
+
+    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public void initialize() {
         configBotoes(botaoHome);
@@ -79,6 +84,7 @@ public class FuncionarioController extends ConfigController {
             alerta.setText("Preencha todos os dados");
             return;
         }
+
         Funcionario funcionario = new Funcionario(nome, funcao, data);
         funcionario.cadastrarFuncionario(funcionario);
         alerta.setText("Funcionário Cadastrado com sucesso!");

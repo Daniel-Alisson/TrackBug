@@ -30,7 +30,7 @@ public class GerenciamentoController extends ConfigController {
     @FXML
     private ListView<String> listaEquipamentosIndisponiveis;
     @FXML
-    private Label detalhesEmprestimo;
+    private Label detalhesEmprestimo, detalhesEmprestimo1, detalhesEmprestimo2;
     @FXML
     private Label alerta;
 
@@ -60,11 +60,12 @@ public class GerenciamentoController extends ConfigController {
     private void mostrarDetalhesEmprestimo(String descricaoEquipamento) {
         Emprestimo emprestimo = emprestimosAtivos.stream().filter(e -> e.getEquipamento().getDescricao().equals(descricaoEquipamento)).findFirst().orElse(null);
         if(emprestimo != null) {
-            System.out.println(emprestimo.getEquipamento().toString());  // Verifique no console se os dados estão corretos
-            System.out.println(emprestimo.getFuncionario().toString());  // Verifique no console
-            System.out.println("Data de Saída: " + emprestimo.getDataHoraSaida());
+            System.out.println(emprestimo.getEquipamento().toString());
+            System.out.println(emprestimo.getFuncionario().toString());
             detalhesEmprestimo.setText(emprestimo.toString());
-                    alerta.setText("Equipamento indisponível!");
+            detalhesEmprestimo1.setText(emprestimo.getEquipamento().toString());
+            detalhesEmprestimo2.setText(emprestimo.getFuncionario().toString());
+            alerta.setText("Equipamento indisponível!");
         }
     }
 

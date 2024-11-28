@@ -9,9 +9,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class ColaboradorController extends ConfigController {
     // BOTOES
@@ -25,6 +28,8 @@ public class ColaboradorController extends ConfigController {
     PasswordField campoSenha, campoSenha2;
     @FXML
     Label alerta;
+    @FXML
+    ImageView fundo1;
 
     // BARRA DE CARREGAMENTO
     @FXML
@@ -38,6 +43,8 @@ public class ColaboradorController extends ConfigController {
         configBotoes(botaoLogin);
         configBotoes(botaoCadastro);
         configBotoes(botaoSair);
+        //Image fundo = new Image(Objects.requireNonNull(MenuController.class.getResourceAsStream("/com/sistema/trackbug/imagens/manga.jpg")));
+        //fundo1.setImage(fundo);
     }
 
     // METODO PARA CADASTRAR COLABORADORES

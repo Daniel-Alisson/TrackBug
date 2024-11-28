@@ -5,15 +5,14 @@ import com.sistema.trackbug.usuario.Funcionario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class MenuController extends ConfigController {
@@ -26,7 +25,7 @@ public class MenuController extends ConfigController {
     private VBox barraLateral, conteudoBarra;
     private boolean barraExpandida = false;
     @FXML
-    private ImageView logo;
+    private ImageView logo, fundo1;
 
     // CAMPOS DA TELA
     @FXML
@@ -36,13 +35,22 @@ public class MenuController extends ConfigController {
     @FXML
     private TableColumn<Funcionario, String> colunaNome;
     @FXML
+    private TableColumn<Funcionario, LocalDate> colunaData;
+    @FXML
     private TableView<Equipamento> tabelaEquipamentos;
     @FXML
     private TableColumn<Equipamento, String> colunaCodigo2;
     @FXML
     private TableColumn<Equipamento, String> colunaDescricao;
     @FXML
+    private TableColumn<Equipamento, String> colunaEstadoConservacao;
+    @FXML
     private Label alerta1, alerta2;
+    @FXML
+    private ToggleButton botaoTrocarTema;
+    @FXML
+    public AnchorPane root;
+    private boolean temaClaro = true;
 
     public void initialize() {
         configBotoes(botaoHome);
@@ -53,15 +61,20 @@ public class MenuController extends ConfigController {
         configBotoes(botaoSair);
         colunaCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colunaNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colunaData.setCellValueFactory(new PropertyValueFactory<>("dataAdmissao"));
         colunaCodigo2.setCellValueFactory(new PropertyValueFactory<>("codigo"));
         colunaDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
+        colunaEstadoConservacao.setCellValueFactory(new PropertyValueFactory<>("estadoConservacao"));
         atualizarTabela();
         colunaCodigo.setStyle("-fx-alignment: CENTER;");
         colunaNome.setStyle("-fx-alignment: CENTER;");
         colunaCodigo2.setStyle("-fx-alignment: CENTER;");
         colunaDescricao.setStyle("-fx-alignment: CENTER;");
+        colunaEstadoConservacao.setStyle("-fx-alignment: CENTER;");
+        colunaData.setStyle("-fx-alignment: CENTER;");
         Image icon = new Image(Objects.requireNonNull(MenuController.class.getResourceAsStream("/com/sistema/trackbug/imagens/unifan.png")));
         logo.setImage(icon);
+        //botaoTrocarTema.setOnAction(event -> trocarTema());
     }
 
     // METODOS PARA CONFIGURAR A BARRA LATERAL
@@ -96,4 +109,27 @@ public class MenuController extends ConfigController {
         alerta2.setText("Tabela atualizada: " + equipamentos.size() + " equipamentos");
         //System.out.println("Tabela atualizada: " + equipamentos.size() + " porcarias");
     }
+    /*
+    @FXML
+    private void trocarTema() {
+        if (root != null) {
+            // Limpa os estilos existentes
+            root.getStylesheets().clear();
+
+            // Verifica se o ToggleButton está selecionado para alternar entre os temas
+            if (botaoTrocarTema.isSelected()) {
+                // Tema escuro (ToggleButton selecionado)
+                root.getStylesheets().add(getClass().getResource("/com/sistema/trackbug/styles/temaEscuro.css").toExternalForm());
+                temaClaro = false;  // Marca que o tema atual é escuro
+            } else {
+                // Tema claro (ToggleButton não selecionado)
+                root.getStylesheets().add(getClass().getResource("/com/sistema/trackbug/styles/temaClaro.css").toExternalForm());
+                temaClaro = true;  // Marca que o tema atual é claro
+            }
+        } else {
+            System.err.println("root não está inicializado corretamente.");
+        }
+    }
+
+     */
 }

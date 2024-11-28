@@ -14,15 +14,13 @@ import java.util.Objects;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader root = new FXMLLoader(App.class.getResource("/com/sistema/trackbug/telaMenuPrincipal.fxml"));
+        FXMLLoader root = new FXMLLoader(App.class.getResource("/com/sistema/trackbug/telaInicial.fxml"));
         stage.setScene(new Scene(root.load(), 1536,816));
         stage.setTitle("TrackBug");
         Image icon = new Image(Objects.requireNonNull(App.class.getResourceAsStream("/com/sistema/trackbug/imagens/unifan.png")));
         stage.getIcons().add(icon);
         stage.show();
         // RESOLUCAO DO MEU NOTEBOOK É 1536.0 x 816.0
-        // 1- ORGANIZAR A ULTIMA TELA
-        // 2- ADICIONAR UMA FUNCIONALIDADE, PENSEI EM MUDAR O TEMA DO SISTEMA
     }
 
     public static void main(String[] args) {

@@ -20,7 +20,7 @@ public class Emprestimo {
     private static List<Emprestimo> listaEmprestimos = new ArrayList<>();
     // HISTORICO DE EMPRESTIMO, TENTAR ADICIONAR UM METODO DE VERIFICAR O HISTORICO DE EMPRESTIMOS
     private static List<Emprestimo> historicoEmprestimos = new ArrayList<>();
-    DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd | HH:mm:ss");
 
     // CONSTRUTOR
     public Emprestimo(LocalDateTime dataHoraSaida, LocalDateTime dataHoraRetorno, Equipamento equipamento, Funcionario funcionario, String observacoes) {
@@ -138,12 +138,8 @@ public class Emprestimo {
 
     @Override
     public String toString() {
-        String formatadoSaida = dataHoraSaida.format(formato);  // Supondo que `formato` seja um DateTimeFormatter
-        return "Equipamento: " + equipamento.getDescricao() + "\n" +
-                "Código: " + equipamento.getCodigo() + "\n" +
-                "Peso: " + equipamento.getPeso() + " kg\n" +
-                "Funcionário: " + funcionario.getNome() + "\n" +
-                "Data de Saída: " + formatadoSaida + "\n" +
-                "Observação: " + observacoes;
+        String formatadoSaida = dataHoraSaida.format(formato);
+        return "Informações do Emprestimo\n\nData e Hora de Saída: " + formatadoSaida + "\nObservações: " + observacoes +
+                "\nData e Hora de Retorno: " + (dataHoraRetorno != null ? dataHoraRetorno : "Ainda não foi devolvido");
     }
 }

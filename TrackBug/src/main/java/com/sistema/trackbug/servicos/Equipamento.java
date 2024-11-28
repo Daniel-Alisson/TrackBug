@@ -175,8 +175,8 @@ public class Equipamento {
     @Override
     public String toString() {
         String formatado = dataCompra.format(formato);
-        return "EQUIPAMENTO - " + codigo + "\n\nCódigo: " + codigo + "\nComprimento: " + comprimento +
-                "\nData de Compra: " + formatado + "\nDescrição: " + descricao + "\nLargura: " + largura +
+        return "Informações do Equipamento\n\nDescrição: " + descricao + "\nCódigo: " + codigo + "\nComprimento: " + comprimento +
+                "\nData de Compra: " + formatado + "\nLargura: " + largura +
                 "\nPeso: " + peso + "\nEstado de Conservação: " + estadoConservacao;
     }
 }

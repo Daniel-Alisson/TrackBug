@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="816.0" maxWidth="1536.0" minHeight="816.0" minWidth="1536.0" prefHeight="816.0" prefWidth="1536.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.trackbug.controllers.MenuController">
+<AnchorPane fx:id="root" maxHeight="816.0" maxWidth="1536.0" minHeight="816.0" minWidth="1536.0" prefHeight="816.0" prefWidth="1536.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.trackbug.controllers.MenuController">
     <children>
         <VBox fx:id="barraLateral" prefWidth="50" style="-fx-background-color: linear-gradient(to bottom, #005FF8, #116AF9); -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -55,18 +55,21 @@
       <Text fill="WHITE" layoutX="744.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MENU PRINCIPAL" textAlignment="CENTER" wrappingWidth="136.5367431640625">
          <font>
             <Font size="24.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <TableView fx:id="tabelaFuncionarios" layoutX="365.0" layoutY="278.0" prefHeight="252.0" prefWidth="378.0">
         <columns>
           <TableColumn fx:id="colunaCodigo" prefWidth="51.20001220703125" text="Código" />
-          <TableColumn fx:id="colunaNome" prefWidth="206.40001220703124" text="Funcionários" />
+          <TableColumn fx:id="colunaNome" prefWidth="196.79998779296875" text="Funcionários" />
+            <TableColumn fx:id="colunaData" prefWidth="128.800048828125" text="Data de Admissão" />
         </columns>
       </TableView>
       <TableView fx:id="tabelaEquipamentos" layoutX="881.0" layoutY="278.0" prefHeight="252.0" prefWidth="378.0">
         <columns>
-          <TableColumn fx:id="colunaCodigo2" prefWidth="52.00006103515625" text="Código" />
-          <TableColumn fx:id="colunaDescricao" prefWidth="205.6000244140625" text="Equipamento" />
+          <TableColumn fx:id="colunaCodigo2" prefWidth="54.4000244140625" text="Código" />
+          <TableColumn fx:id="colunaDescricao" prefWidth="178.39990234375" text="Equipamento" />
+            <TableColumn fx:id="colunaEstadoConservacao" prefWidth="144.800048828125" text="Estado de Conservação" />
         </columns>
       </TableView>
       <Label fx:id="alerta" alignment="CENTER" layoutX="439.0" layoutY="257.0" prefHeight="18.0" prefWidth="230.0" text="Lista de Funcionários" textFill="WHITE">
@@ -87,5 +90,5 @@
             <Font size="14.0" />
          </font>
       </Label>
-    </children>
+      </children>
 </AnchorPane>

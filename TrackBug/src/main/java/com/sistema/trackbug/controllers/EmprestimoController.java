@@ -46,11 +46,16 @@ public class EmprestimoController extends ConfigController {
         configBotoes(botaoControleEmprestimos);
         configBotoes(botaoSair);
         configBotoes(botaoConfirmar);
+
+
         // JOGANDO AS LISTA DE FUNCIONARIOS E EQUIPAMENTOS NA COMBOBOX
         ObservableList<Funcionario> funcionarios = FXCollections.observableArrayList(Funcionario.getListaFuncionarios());
         comboFuncionarios.setItems(funcionarios);
         ObservableList<Equipamento> equipamentosDisponiveis = FXCollections.observableArrayList(Equipamento.getListaEquipamentos());
         comboEquipamentos.setItems(equipamentosDisponiveis);
+
+
+
         Image icon = new Image(Objects.requireNonNull(EmprestimoController.class.getResourceAsStream("/com/sistema/trackbug/imagens/unifan.png")));
         logo.setImage(icon);
     }

@@ -120,7 +120,6 @@ public class Funcionario {
     @Override
     public String toString() {
         String formatado = dataAdmissao.format(formato);
-        return "FUNCIONÁRIO - " + nome + "\n\nCódigo: " + codigo + "\nNome: " + nome +
-                "\nFunção: " + funcao + "\nData de admissão: " + formatado;
+        return "Informações do Funcionário\n\nNome: " + nome + "\nCódigo: " + codigo + "\nFunção: " + funcao + "\nData de admissão: " + formatado;
     }
 }

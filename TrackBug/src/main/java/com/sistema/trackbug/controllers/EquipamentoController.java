@@ -7,11 +7,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class EquipamentoController extends ConfigController {
     // BOTOES DA BARRA LATERAL
@@ -22,6 +25,8 @@ public class EquipamentoController extends ConfigController {
     @FXML
     private VBox barraLateral, conteudoBarra;
     private boolean barraExpandida = false;
+    @FXML
+    private ImageView logo;
 
     // CAMPOS DA TELA
     @FXML
@@ -30,6 +35,8 @@ public class EquipamentoController extends ConfigController {
     private DatePicker campoData;
     @FXML
     private Label alerta;
+    @FXML
+    private Button botaoCadastro;
 
     public void initialize() {
         configBotoes(botaoHome);
@@ -38,6 +45,9 @@ public class EquipamentoController extends ConfigController {
         configBotoes(botaoEmprestimos);
         configBotoes(botaoControleEmprestimos);
         configBotoes(botaoSair);
+        configBotoes(botaoCadastro);
+        Image icon = new Image(Objects.requireNonNull(EquipamentoController.class.getResourceAsStream("/com/sistema/trackbug/imagens/unifan.png")));
+        logo.setImage(icon);
     }
 
     // METODO PARA CADASTRAR EQUIPAMENTOS
@@ -84,11 +94,15 @@ public class EquipamentoController extends ConfigController {
             botaoPrincipal.setText("☰");
             conteudoBarra.setVisible(false);
             conteudoBarra.setManaged(false);
+            logo.setVisible(false);
+            logo.setManaged(false);
         } else {
             barraLateral.setPrefWidth(200);
             botaoPrincipal.setText("☰");
             conteudoBarra.setVisible(true);
             conteudoBarra.setManaged(true);
+            logo.setVisible(true);
+            logo.setManaged(true);
         }
         barraExpandida = !barraExpandida;
     }

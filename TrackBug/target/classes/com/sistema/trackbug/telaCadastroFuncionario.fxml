@@ -4,41 +4,46 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.trackbug.controllers.FuncionarioController">
+<AnchorPane maxHeight="816.0" maxWidth="1536.0" minHeight="816.0" minWidth="1536.0" prefHeight="816.0" prefWidth="1536.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistema.trackbug.controllers.FuncionarioController">
     <children>
-        <VBox fx:id="barraLateral" prefWidth="50" style="-fx-background-color: linear-gradient(to bottom, #005FF8, #116AF9);" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox fx:id="barraLateral" prefHeight="816.0" prefWidth="50" style="-fx-background-color: linear-gradient(to bottom, #005FF8, #116AF9); -fx-border-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Button fx:id="botaoPrincipal" onAction="#alternarBarra" prefHeight="50" prefWidth="50" style="-fx-background-color: Transparent; -fx-border-color: white; -fx-border-width: 2px; -fx-border-radius: 15px;" text="☰" textFill="WHITE" />
-                <Region prefHeight="20" />
+                <Region prefHeight="30.0" />
+                <VBox alignment="CENTER" spacing="10">
+                    <ImageView fx:id="logo" fitHeight="100.0" fitWidth="100.0" managed="false" pickOnBounds="true" preserveRatio="true" visible="false" />
+                </VBox>
+                <Region prefHeight="30.0" />
                 <VBox fx:id="conteudoBarra" alignment="CENTER" managed="false" spacing="10" visible="false">
                     <children>
-                        <Button fx:id="botaoHome" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaMenuPrincipal" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Black; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Home" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoHome" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaMenuPrincipal" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: Black; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Home" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button fx:id="botaoCadastroFuncionario" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaCadastroFuncionario" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Funcionários" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoCadastroFuncionario" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" mnemonicParsing="false" onAction="#mudarTelaCadastroFuncionario" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Funcionários" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button fx:id="botaoCadastroEquipamento" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaCadastroEquipamento" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Equipamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoCadastroEquipamento" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaCadastroEquipamento" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Cadastro de Equipamentos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button fx:id="botaoEmprestimos" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaEmprestimo" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Realizar Emprestimos" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoEmprestimos" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaEmprestimo" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Realizar Emprestimos" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button fx:id="botaoControleEmprestimos" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaControleEmprestimos" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Gerenciamento de Emprestimos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoControleEmprestimos" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#mudarTelaControleEmprestimos" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: Transparent; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Gerenciamento de Emprestimos" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
-                        <Button fx:id="botaoSair" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#sairSistema" prefHeight="50.0" prefWidth="150" style="-fx-background-color: Red; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Sair" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                        <Button fx:id="botaoSair" alignment="CENTER" contentDisplay="CENTER" maxHeight="50.0" maxWidth="150.0" minHeight="50.0" minWidth="150.0" onAction="#sairSistema" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: Red; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white;" text="Sair" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
@@ -46,18 +51,38 @@
                 </VBox>
             </children>
         </VBox>
-      <Text fill="WHITE" layoutX="382.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE FUNCIONÁRIOS" textAlignment="CENTER" wrappingWidth="260.5367431640625">
+      <Text fill="WHITE" layoutX="625.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DE FUNCIONÁRIOS" textAlignment="CENTER" wrappingWidth="371.73681640625">
          <font>
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="362.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="39.0191650390625" />
-      <TextField fx:id="campoNome" layoutX="362.0" layoutY="321.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite o seu nome" />
-      <Text fill="WHITE" layoutX="362.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Função" />
-      <TextField fx:id="campoFuncao" layoutX="362.0" layoutY="384.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite a sua função" />
-      <Text fill="WHITE" layoutX="362.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Admissão" />
-      <DatePicker fx:id="campoData" layoutX="362.0" layoutY="448.0" prefHeight="30.0" prefWidth="300.0" promptText="Digite sua data de Admissão" />
-      <Button fx:id="botaoCadastro" alignment="CENTER" contentDisplay="CENTER" layoutX="437.0" layoutY="546.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: Green; -fx-border-width: 2px; -fx-background-radius: 15px; -fx-border-color: white; -fx-shape: &quot;M 0,0 L 0,100 L 100,100 L 100,0 Z&quot;;" text="Cadastrar" textAlignment="CENTER" textFill="WHITE" />
-      <Label fx:id="alerta" alignment="CENTER" layoutX="381.0" layoutY="604.0" prefHeight="18.0" prefWidth="261.0" textFill="#00ff26" />
+      <AnchorPane layoutX="505.0" layoutY="235.0" prefHeight="445.0" prefWidth="611.0" style="-fx-background-color: linear-gradient(to bottom, #005FF8, #116AF9); -fx-background-radius: 15px; -fx-border-color: white; -fx-border-radius: 15px; -fx-border-width: 2px;">
+         <children>
+            <Label fx:id="alerta" alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="397.0" prefHeight="18.0" prefWidth="261.0" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Text fill="WHITE" layoutX="661.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="50.400000000000034">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <TextField fx:id="campoNome" layoutX="661.0" layoutY="318.0" prefHeight="40.0" prefWidth="300.0" promptText="Digite o seu nome" />
+      <Text fill="WHITE" layoutX="661.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Função" wrappingWidth="118.0745849609375">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <TextField fx:id="campoFuncao" layoutX="661.0" layoutY="389.0" prefHeight="40.0" prefWidth="300.0" promptText="Digite a sua função" />
+      <Text fill="WHITE" layoutX="661.0" layoutY="456.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Admissão" wrappingWidth="202.37652587890625">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <DatePicker fx:id="campoData" layoutX="661.0" layoutY="460.0" prefHeight="40.0" prefWidth="300.0" promptText="Digite sua data de Admissão" />
+      <Button fx:id="botaoCadastro" alignment="CENTER" contentDisplay="CENTER" layoutX="736.0" layoutY="567.0" mnemonicParsing="false" onAction="#cadastrarFuncionario" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: Green; -fx-border-width: 2px; -fx-border-color: white;" text="Cadastrar" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Button>
     </children>
 </AnchorPane>

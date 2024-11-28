@@ -3,6 +3,7 @@ package com.sistema.trackbug.servicos;
 import com.sistema.trackbug.usuario.Funcionario;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class Emprestimo {
     private static List<Emprestimo> listaEmprestimos = new ArrayList<>();
     // HISTORICO DE EMPRESTIMO, TENTAR ADICIONAR UM METODO DE VERIFICAR O HISTORICO DE EMPRESTIMOS
     private static List<Emprestimo> historicoEmprestimos = new ArrayList<>();
+    DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     // CONSTRUTOR
     public Emprestimo(LocalDateTime dataHoraSaida, LocalDateTime dataHoraRetorno, Equipamento equipamento, Funcionario funcionario, String observacoes) {
@@ -136,8 +138,12 @@ public class Emprestimo {
 
     @Override
     public String toString() {
-        return "EMPRÉSTIMO - Equipamento: " + equipamento.getDescricao() + "\nFuncionário: " + funcionario.getNome() +
-                "\nData de Saída: " + dataHoraSaida + "\nData de Retorno: " + dataHoraRetorno +
-                "\nObservações: " + observacoes;
+        String formatadoSaida = dataHoraSaida.format(formato);  // Supondo que `formato` seja um DateTimeFormatter
+        return "Equipamento: " + equipamento.getDescricao() + "\n" +
+                "Código: " + equipamento.getCodigo() + "\n" +
+                "Peso: " + equipamento.getPeso() + " kg\n" +
+                "Funcionário: " + funcionario.getNome() + "\n" +
+                "Data de Saída: " + formatadoSaida + "\n" +
+                "Observação: " + observacoes;
     }
 }

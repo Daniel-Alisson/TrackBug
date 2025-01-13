@@ -1,2 +1,2 @@
 # TrackBug
-Sistema de Controle de Emprestimo, falta melhorar ainda
+Sistema de Controle de Emprestimo simples

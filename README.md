@@ -4,24 +4,22 @@ O **TrackBug** é um sistema simples de controle de emprestimos de equipamentos 
 
 ---
 
-## Download
+#### [Download do Executável](https://github.com/Daniel-Alisson/TrackBug/releases/tag/V0.1.5)
 
 ---
 
 ## Funcionalidades
 
-### Gerenciamento de Administradores
-- Cadastro, Login  
-
-### Cadastro de Funcionários e Equipamentos
-### Controle de Empréstimos e Devoluções de Equipamentos
+- **Gerenciamento de Administradores**
+  - Cadastro, Login
+- **Cadastro de Funcionários e Equipamentos**
+- **Controle de Empréstimos e Devoluções de Equipamentos**
 
 ---
 
-## 💻 Tecnologias Utilizadas
-
-- Java  
-- JavaFX 
+## Tecnologias Utilizadas
+- **Java** 
+- **JavaFX** 
 
 ---
 
